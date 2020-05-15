@@ -11,10 +11,10 @@ namespace Pokebattle
             // create my pokebag
             Pokebag myPokebag = new Pokebag();
 
-            // Create Carl the Pikachu, Charmeleon Hendrick the First and Bro the Charmeleon
-            Pikachu pikachu = new Pikachu();
-            Charmeleon charmeleon = new Charmeleon();
-            Charmeleon bro = new Charmeleon();
+            // Create Carl the Pikachu, Charmeleon Hendrick the First etc
+            Pikachu pikachu = new Pikachu("Carl");
+            Charmeleon charmeleon = new Charmeleon("Hendrick the First");
+            Charmeleon bro = new Charmeleon("Bro");
             Pikachu pikachu2 = new Pikachu();
             
             Console.WriteLine(Pokemon.GetPopulation());
