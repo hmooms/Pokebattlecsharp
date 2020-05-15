@@ -9,3 +9,16 @@ C:\Users\hmoom\Projects\School\Pokebattle\Pokebattle\bin\Debug\netcoreapp3.1\Pok
 C:\Users\hmoom\Projects\School\Pokebattle\Pokebattle\bin\Debug\netcoreapp3.1\Pokebattle.pdb
 C:\Users\hmoom\Projects\School\Pokebattle\Pokebattle\obj\Debug\netcoreapp3.1\Pokebattle.dll
 C:\Users\hmoom\Projects\School\Pokebattle\Pokebattle\obj\Debug\netcoreapp3.1\Pokebattle.pdb
+D:\Projects\School\PokebattleCS\Pokebattle\Pokebattle\bin\Debug\netcoreapp3.1\Pokebattle.exe
+D:\Projects\School\PokebattleCS\Pokebattle\Pokebattle\bin\Debug\netcoreapp3.1\Pokebattle.deps.json
+D:\Projects\School\PokebattleCS\Pokebattle\Pokebattle\bin\Debug\netcoreapp3.1\Pokebattle.runtimeconfig.json
+D:\Projects\School\PokebattleCS\Pokebattle\Pokebattle\bin\Debug\netcoreapp3.1\Pokebattle.runtimeconfig.dev.json
+D:\Projects\School\PokebattleCS\Pokebattle\Pokebattle\bin\Debug\netcoreapp3.1\Pokebattle.dll
+D:\Projects\School\PokebattleCS\Pokebattle\Pokebattle\bin\Debug\netcoreapp3.1\Pokebattle.pdb
+D:\Projects\School\PokebattleCS\Pokebattle\Pokebattle\obj\Debug\netcoreapp3.1\Pokebattle.csprojAssemblyReference.cache
+D:\Projects\School\PokebattleCS\Pokebattle\Pokebattle\obj\Debug\netcoreapp3.1\Pokebattle.AssemblyInfoInputs.cache
+D:\Projects\School\PokebattleCS\Pokebattle\Pokebattle\obj\Debug\netcoreapp3.1\Pokebattle.AssemblyInfo.cs
+D:\Projects\School\PokebattleCS\Pokebattle\Pokebattle\obj\Debug\netcoreapp3.1\Pokebattle.dll
+D:\Projects\School\PokebattleCS\Pokebattle\Pokebattle\obj\Debug\netcoreapp3.1\Pokebattle.pdb
+D:\Projects\School\PokebattleCS\Pokebattle\Pokebattle\obj\Debug\netcoreapp3.1\Pokebattle.csproj.CoreCompileInputs.cache
+D:\Projects\School\PokebattleCS\Pokebattle\Pokebattle\obj\Debug\netcoreapp3.1\Pokebattle.genruntimeconfig.cache

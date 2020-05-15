@@ -7,26 +7,28 @@ namespace Pokebattle.Classes.GameLogic
     class Pokemon
     {
         public string name;
-        public EnergyType energyType;
-        public float hitpoints;
-        public float health;
+        protected EnergyType energyType;
+        protected float hitpoints;
+        protected float health;
         public List<Attack> attacks;
-        public Weakness weakness;
-        public Resistance resistance;
+        protected Weakness weakness;
+        protected Resistance resistance;
 
-        // when this pokemon uses an attack print:
-        // pokemon used .... !
+        /* when this pokemon uses an attack print:
+         * pokemon used .... !
+         */
         public string Attack(Attack attack, Pokemon target)
         {
             return this.name + " used " + attack.name + " ! \r\n" + target.Attacked(attack);
         }
 
-        // When this pokemon gets attacked by pokemon
-        // compare Energytype to weakness and resistance 
-        // calculate damage
-        // print either: it's very effective or it's not very effective or nothing
-        // print: this pokemon took ... damage!
-        // remove damage from health
+        /* When this pokemon gets attacked by pokemon
+         * compare Energytype to weakness and resistance 
+         * calculate damage
+         * print either: it's very effective or it's not very effective or nothing
+         * print: this pokemon took ... damage!
+         * remove damage from health
+         */
         public string Attacked(Attack attack)
         {
             string text = this.name + " has " + this.health + "hp.\r\n";

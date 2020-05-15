@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\hmoom\\Projects\\School\\Pokebattle\\Pokebattle\\Pokebattle.csproj": {}
+    "D:\\Projects\\School\\PokebattleCS\\Pokebattle\\Pokebattle\\Pokebattle.csproj": {}
   },
   "projects": {
-    "C:\\Users\\hmoom\\Projects\\School\\Pokebattle\\Pokebattle\\Pokebattle.csproj": {
+    "D:\\Projects\\School\\PokebattleCS\\Pokebattle\\Pokebattle\\Pokebattle.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\hmoom\\Projects\\School\\Pokebattle\\Pokebattle\\Pokebattle.csproj",
+        "projectUniqueName": "D:\\Projects\\School\\PokebattleCS\\Pokebattle\\Pokebattle\\Pokebattle.csproj",
         "projectName": "Pokebattle",
-        "projectPath": "C:\\Users\\hmoom\\Projects\\School\\Pokebattle\\Pokebattle\\Pokebattle.csproj",
+        "projectPath": "D:\\Projects\\School\\PokebattleCS\\Pokebattle\\Pokebattle\\Pokebattle.csproj",
         "packagesPath": "C:\\Users\\hmoom\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\hmoom\\Projects\\School\\Pokebattle\\Pokebattle\\obj\\",
+        "outputPath": "D:\\Projects\\School\\PokebattleCS\\Pokebattle\\Pokebattle\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\hmoom\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -52,7 +52,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.101\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.202\\RuntimeIdentifierGraph.json"
         }
       }
     }
