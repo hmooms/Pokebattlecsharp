@@ -12,10 +12,14 @@ namespace Pokebattle
             Pokebag myPokebag = new Pokebag();
 
             // Create Carl the Pikachu, Charmeleon Hendrick the First and Bro the Charmeleon
-            Pikachu pikachu = new Pikachu("Carl");
-            Charmeleon charmeleon = new Charmeleon("Hendrick the First");
-            Charmeleon bro = new Charmeleon("Bro");
+            Pikachu pikachu = new Pikachu();
+            Charmeleon charmeleon = new Charmeleon();
+            Charmeleon bro = new Charmeleon();
             Pikachu pikachu2 = new Pikachu();
+            
+            Console.WriteLine(Pokemon.GetPopulation());
+            Console.WriteLine(Pokemon.GetAverageHealth());
+                     
 
             // yeah it all makes sense trust me
             Console.WriteLine(
@@ -25,6 +29,10 @@ namespace Pokebattle
                 charmeleon.Attack(charmeleon.attacks[0], pikachu) +
                 pikachu2.Attack(pikachu2.attacks[0], charmeleon)
             );
+
+
+            Console.WriteLine(Pokemon.GetPopulation());
+            Console.WriteLine(Pokemon.GetAverageHealth());
 
             Console.WriteLine(
                 myPokebag.AddPokemonToPokebag(pikachu) +

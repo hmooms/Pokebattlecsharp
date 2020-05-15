@@ -4,7 +4,7 @@ using System.Text;
 
 namespace Pokebattle.Classes.GameLogic
 {
-    class Pokemon
+    abstract class Pokemon
     {
         private string name;
         private EnergyType energyType;
@@ -14,6 +14,8 @@ namespace Pokebattle.Classes.GameLogic
         private Weakness weakness;
         private Resistance resistance;
         private bool hasFainted = false;
+
+        private static List<Pokemon> pokemonList = new List<Pokemon>();
 
         public string Name { get => name; }
         public bool HasFainted { get => hasFainted; }
@@ -26,9 +28,33 @@ namespace Pokebattle.Classes.GameLogic
             this.health = hitpoints;
             this.weakness = weakness;
             this.resistance = resistance;
+            pokemonList.Add(this);
         }
 
+        /* Get the amount of pokemon that have not fainted
+         */
+        public static string GetPopulation()
+        {
+            return "The current amount of pokemon that are alive and not fainted is: " + pokemonList.Count + ".\r\n";
+        }
 
+        /* To get the average hp from all the pokemon that have not fainted
+         * for every pokemon we add their current hp together and divide by the number of pokemon
+         */
+        public static string GetAverageHealth()
+        {
+            float hp = 0;
+            foreach(Pokemon pokemon in pokemonList)
+            {
+                hp += pokemon.health;
+            }
+            return "The current average hp of pokemon that haven't fainted/died is: " + (hp / pokemonList.Count).ToString() + ".\r\n";
+        }
+
+        // Since every Pokemon needs to do this
+        protected abstract List<Attack> CreateAttackList();
+
+      
 
         /* when this pokemon uses an attack:
          * check if the attacking pokemon is fainted
@@ -42,11 +68,11 @@ namespace Pokebattle.Classes.GameLogic
         {
             if (this.hasFainted)
             {
-                return this.name + " wants to use " + attack.Name + "...\r\n" + "But " + this.name + " is fainted...\r\n";
+                return this.name + " has fainted...\r\n" + "So it can't use " + attack.Name + "...\r\n";
             }
             else if (target.HasFainted)
             {
-                return this.name + " tries to use " + attack.Name + "...\r\n" + "But " + target.Name + " is already fainted...\r\n";
+                return this.name + " tries to use " + attack.Name + "...\r\n" + "But " + target.Name + " has already fainted...\r\n";
             }
             return this.name + " used " + attack.Name + " ! \r\n" + target.Attacked(attack);
         }
@@ -59,6 +85,7 @@ namespace Pokebattle.Classes.GameLogic
          * remove damage from health
          * check if health is equal or less than 0
          * if less than 0 the pokemon has fainted
+         * set their has fainted to true and remove from the pokemonlist
          * else just print the remaining hp
          */
         public string Attacked(Attack attack)
@@ -89,6 +116,7 @@ namespace Pokebattle.Classes.GameLogic
             {
                 text += this.name + " has 0hp remaining.\r\n" + this.name + " has fainted.\r\n";
                 this.hasFainted = true;
+                pokemonList.Remove(this);
             }
             else {
                 text += this.name + " has " + this.health + "hp remaining.\r\n";

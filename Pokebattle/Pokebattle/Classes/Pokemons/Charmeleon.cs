@@ -14,7 +14,7 @@ namespace Pokebattle.Classes.Pokemons
         }
 
         // Add attacks to the list
-        private List<Attack> CreateAttackList()
+        protected override List<Attack> CreateAttackList()
         {
             // create list
             List<Attack> Alist = new List<Attack>();
