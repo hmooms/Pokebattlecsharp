@@ -6,20 +6,49 @@ namespace Pokebattle.Classes.GameLogic
 {
     class Pokemon
     {
-        public string name;
-        protected EnergyType energyType;
-        protected float hitpoints;
-        protected float health;
+        private string name;
+        private EnergyType energyType;
+        private float hitpoints;
+        private float health;
         public List<Attack> attacks;
-        protected Weakness weakness;
-        protected Resistance resistance;
+        private Weakness weakness;
+        private Resistance resistance;
+        private bool hasFainted = false;
 
-        /* when this pokemon uses an attack print:
+        public string Name { get => name; }
+        public bool HasFainted { get => hasFainted; }
+
+        public Pokemon(string name, EnergyType energyType, float hitpoints, Weakness weakness, Resistance resistance)
+        {
+            this.name = name;
+            this.energyType = energyType;
+            this.hitpoints = hitpoints;
+            this.health = hitpoints;
+            this.weakness = weakness;
+            this.resistance = resistance;
+        }
+
+
+
+        /* when this pokemon uses an attack:
+         * check if the attacking pokemon is fainted
+         * if true print you cant use the attack
+         * or if the enemy pokemon is fainted
+         * print attack is useless
+         * if both are not ture print
          * pokemon used .... !
          */
         public string Attack(Attack attack, Pokemon target)
         {
-            return this.name + " used " + attack.name + " ! \r\n" + target.Attacked(attack);
+            if (this.hasFainted)
+            {
+                return this.name + " wants to use " + attack.Name + "...\r\n" + "But " + this.name + " is fainted...\r\n";
+            }
+            else if (target.HasFainted)
+            {
+                return this.name + " tries to use " + attack.Name + "...\r\n" + "But " + target.Name + " is already fainted...\r\n";
+            }
+            return this.name + " used " + attack.Name + " ! \r\n" + target.Attacked(attack);
         }
 
         /* When this pokemon gets attacked by pokemon
@@ -28,6 +57,9 @@ namespace Pokebattle.Classes.GameLogic
          * print either: it's very effective or it's not very effective or nothing
          * print: this pokemon took ... damage!
          * remove damage from health
+         * check if health is equal or less than 0
+         * if less than 0 the pokemon has fainted
+         * else just print the remaining hp
          */
         public string Attacked(Attack attack)
         {
@@ -53,7 +85,14 @@ namespace Pokebattle.Classes.GameLogic
 
             this.health -= damage;
 
-            text += this.name + " has " + this.health + "hp remaining.\r\n";
+            if (this.health <= 0)
+            {
+                text += this.name + " has 0hp remaining.\r\n" + this.name + " has fainted.\r\n";
+                this.hasFainted = true;
+            }
+            else {
+                text += this.name + " has " + this.health + "hp remaining.\r\n";
+            }
             return text;
         }
     }

@@ -22,7 +22,7 @@ namespace Pokebattle.Classes.GameLogic
             if (pokemonList.Count < MaxPokemonInList)
             {
                 pokemonList.Add(pokemon);
-                return pokemon.name + " has been added to your pokebag!\r\n";
+                return pokemon.Name + " has been added to your pokebag!\r\n";
             }
             else
             {
@@ -42,7 +42,7 @@ namespace Pokebattle.Classes.GameLogic
             {
                 foreach (Pokemon pokemon in pokemonList)
                 {
-                    text += pokemon.name + "\r\n";
+                    text += pokemon.Name + "\r\n";
                 }
                 return text + "are in your pokebag.\r\n";
             }
@@ -70,10 +70,10 @@ namespace Pokebattle.Classes.GameLogic
                 foreach (Pokemon pokemon in pokemonList)
                 {
                     // making it to lower case so that the name is no longer case sensitive.
-                    if (pokemon.name.ToLower() == name.ToLower())
+                    if (pokemon.Name.ToLower() == name.ToLower())
                     {
                         pokemonList.Remove(pokemon);
-                        return pokemon.name + " has been removed from your pokebag!\r\n";
+                        return pokemon.Name + " has been removed from your pokebag!\r\n";
                     }
                 }
 

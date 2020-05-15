@@ -6,9 +6,11 @@ namespace Pokebattle.Classes.GameLogic
 {
     class Attack
     {
-        public string name;
+        private string name;
         public EnergyType energyType;
         public float damage;
+
+        public string Name { get => name; }
 
         // Constructor
         public Attack(string name, EnergyType energyType, float damage)

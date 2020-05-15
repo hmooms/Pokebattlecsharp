@@ -15,11 +15,15 @@ namespace Pokebattle
             Pikachu pikachu = new Pikachu("Carl");
             Charmeleon charmeleon = new Charmeleon("Hendrick the First");
             Charmeleon bro = new Charmeleon("Bro");
+            Pikachu pikachu2 = new Pikachu();
 
             // yeah it all makes sense trust me
             Console.WriteLine(
                 pikachu.Attack(pikachu.attacks[0], charmeleon) +
-                charmeleon.Attack(charmeleon.attacks[0], pikachu)
+                charmeleon.Attack(charmeleon.attacks[0], pikachu) +
+                pikachu2.Attack(pikachu2.attacks[0], charmeleon) +
+                charmeleon.Attack(charmeleon.attacks[0], pikachu) +
+                pikachu2.Attack(pikachu2.attacks[0], charmeleon)
             );
 
             Console.WriteLine(
