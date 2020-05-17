@@ -19,7 +19,7 @@ namespace Pokebattle.Classes.GameLogic
         // Take the damage of the attack and multiply by the multiplier
         public float CalculateDamage(float attack)
         {
-            return attack * this.mulitplier;
+            return attack * mulitplier;
         }
     }
 }

@@ -25,7 +25,8 @@ namespace Pokebattle.Classes.GameLogic
             this.name = name;
             this.energyType = energyType;
             this.hitpoints = hitpoints;
-            this.health = hitpoints;
+            health = hitpoints;
+            attacks = CreateAttackList();
             this.weakness = weakness;
             this.resistance = resistance;
             pokemonList.Add(this);
@@ -66,15 +67,15 @@ namespace Pokebattle.Classes.GameLogic
          */
         public string Attack(Attack attack, Pokemon target)
         {
-            if (this.hasFainted)
+            if (hasFainted)
             {
-                return this.name + " has fainted...\r\n" + "So it can't use " + attack.Name + "...\r\n";
+                return name + " has fainted...\r\n" + "So it can't use " + attack.Name + "...\r\n";
             }
             else if (target.HasFainted)
             {
-                return this.name + " tries to use " + attack.Name + "...\r\n" + "But " + target.Name + " has already fainted...\r\n";
+                return name + " tries to use " + attack.Name + "...\r\n" + "But " + target.Name + " has already fainted...\r\n";
             }
-            return this.name + " used " + attack.Name + " ! \r\n" + target.Attacked(attack);
+            return name + " used " + attack.Name + " ! \r\n" + target.Attacked(attack);
         }
 
         /* When this pokemon gets attacked by pokemon
@@ -90,17 +91,17 @@ namespace Pokebattle.Classes.GameLogic
          */
         public string Attacked(Attack attack)
         {
-            string text = this.name + " has " + this.health + "hp.\r\n";
+            string text = name + " has " + health + "hp.\r\n";
             float damage;
 
-            if (attack.energyType.name == this.weakness.energyType.name)
+            if (attack.energyType.name == weakness.energyType.name)
             {
-                damage = this.weakness.CalculateDamage(attack.damage);
+                damage = weakness.CalculateDamage(attack.damage);
                 text += "It's very effective!\r\n";
             }
-            else if (attack.energyType.name == this.resistance.energyType.name)
+            else if (attack.energyType.name == resistance.energyType.name)
             {
-                damage = this.resistance.CalculateDamage(attack.damage);
+                damage = resistance.CalculateDamage(attack.damage);
                 text += "it's not very effective!\r\n";
             }
             else
@@ -108,18 +109,18 @@ namespace Pokebattle.Classes.GameLogic
                 damage = attack.damage;
             }
 
-            text += this.name + " took " + damage + " damage!\r\n";
+            text += name + " took " + damage + " damage!\r\n";
 
-            this.health -= damage;
+            health -= damage;
 
-            if (this.health <= 0)
+            if (health <= 0)
             {
-                text += this.name + " has 0hp remaining.\r\n" + this.name + " has fainted.\r\n";
-                this.hasFainted = true;
+                text += name + " has 0hp remaining.\r\n" + name + " has fainted.\r\n";
+                hasFainted = true;
                 pokemonList.Remove(this);
             }
             else {
-                text += this.name + " has " + this.health + "hp remaining.\r\n";
+                text += name + " has " + health + "hp remaining.\r\n";
             }
             return text;
         }
