@@ -10,7 +10,7 @@ namespace Pokebattle.Classes.Pokemons
         // Construct the Pikachu
         public Pikachu(string name = "Pikachu") : base(name, new EnergyType(EnergyType.energyName.Lightning), 60f, new Weakness(new EnergyType(EnergyType.energyName.Fire), 1.5f), new Resistance(new EnergyType(EnergyType.energyName.Fighting), 20f))
         {
-            this.attacks = CreateAttackList();
+
         }
 
 
@@ -18,11 +18,11 @@ namespace Pokebattle.Classes.Pokemons
         protected override List<Attack> CreateAttackList()
         {
             // create list
-            List<Attack> Alist = new List<Attack>();
-
-            // add the attacks with their name, energytype and damage
-            Alist.Add(new Attack("Electric Ring", new EnergyType(EnergyType.energyName.Lightning), 50f));
-            Alist.Add(new Attack("Pika Punch", new EnergyType(EnergyType.energyName.Fighting), 20f));
+            List<Attack> Alist = new List<Attack> { 
+                // add the attacks with their name, energytype and damage
+                new Attack("Electric Ring", new EnergyType(EnergyType.energyName.Lightning), 50f),
+                new Attack("Pika Punch", new EnergyType(EnergyType.energyName.Fighting), 20f)
+            };
 
             return Alist;
         }
